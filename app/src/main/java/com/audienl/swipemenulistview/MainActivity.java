@@ -56,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         for (int i = 0; i < 30; i++) {
-            mItems.add("AudienL: " + i);
+            mItems.add("KwStudio: " + i);
         }
 
         mAdapter = new MyAdapter();
         mSwipeMenuListView.setAdapter(mAdapter);
 
-        // 点击选项中的删除按钮
+        
         mSwipeMenuListView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemViewType(int position) {
-            // 最后一项不滑动
+         
             return position == mItems.size() - 1 ? TYPE_NON_SWIPE : TYPE_SWIPE;
         }
 
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
             holder.tv.setText(item);
 
-            /** 注意：这里只能对某个子元素设置click事件，不能对整个item设置onItemClickListener */
+       
             holder.tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
